@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Road Runner</title>
+        <script src="lib/phaser.min.js"></script>
+        <script src="js/boot.js"></script>
+        <script src="js/preload.js"></script>
+        <script src="js/traffic.js"></script>
+        <script src="js/currentlevel.js"></script>
+        <!-- <script src="js/menu.js"></script> --> 
+        <script src="js/play.js"></script>
+        <style>
+            *{margin: 0; padding: 0}
+            html { 
+                background-position:  center !important ; 
+                background-repeat: no-repeat !important;
+                -webkit-background-size: cover !important;
+                -moz-background-size: cover !important;
+                -o-background-size: cover !important;
+                background-size: cover !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game"></div>
+        <script>
+            var game = new Phaser.Game(750, '100%');
+            game.state.add('boot', RoadRunner.boot);
+            game.state.add('preload', RoadRunner.preload);
+            game.state.add('startscreen', RoadRunner.startscreen);
+            game.state.add('currentlevel', RoadRunner.currentlevel);
+            game.state.add('playGame', RoadRunner.playGame);
+            game.state.start('boot');
+        </script>
+    </body>
+</html>
